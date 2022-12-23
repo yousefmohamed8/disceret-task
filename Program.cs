@@ -1,28 +1,27 @@
-﻿int n1, n2, sum = 0;
+﻿int n1, n2, flag = 0;
 Console.Write("Enter Frist number: ");
 n1 = int.Parse(Console.ReadLine());
 Console.Write("Enter second number: ");
 n2 = int.Parse(Console.ReadLine());
-Console.WriteLine("Perfect numbers  are: ");
+Console.WriteLine("Prime numbers  are: ");
 Console.WriteLine("-----------------------------------------------------");
-for (int i = n1; i <= n2; i++)
+for (int i = n1; i < n2; i++)
 {
-    sum = 0;
-  
-    
-        for (int j = 1; j < i; j++)
+    flag = 0;
+    if (i > 1)
+    {
+        for (int j = 2; j < i; j++)
         {
-            if (i % j == 0)sum=sum + j;
+            if (i % j == 0)
             {
-               
-             
+                flag = 1;
+                continue;
             }
         }
-        if (sum == i)
+        if (flag == 0)
         {
-        Console.WriteLine(i);
+            Console.WriteLine(i);
+        }
     }
-       
-    
 }
 
